@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Service } from "../service/service.service";
-import {ActivatedRoute  } from "@angular/router";
+import {ActivatedRoute,Router  } from "@angular/router";
 @Component({
   selector: 'app-book-read',
   templateUrl: './book-read.component.html',
@@ -11,7 +11,7 @@ import {ActivatedRoute  } from "@angular/router";
 // }
 export class BookReadComponent implements OnInit {
   bookRead: any = []
-  constructor(private sendData :Service,private getData :ActivatedRoute) {
+  constructor(private sendData :Service,private getData :ActivatedRoute,private route : Router) {
 
   }
   ngOnInit(): void {
@@ -20,6 +20,7 @@ export class BookReadComponent implements OnInit {
       if (res.status == 1) {
         this.bookRead.push(res.data)
       } else {
+        this.route.navigate(['book_list'])
       }
     })
   }

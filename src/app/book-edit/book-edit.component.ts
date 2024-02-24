@@ -67,8 +67,6 @@ export class BookEditComponent implements OnInit {
           this.route.navigate(['book_list'])
         }, 10000);
       })
-    } else {
-
     }
 
   }
