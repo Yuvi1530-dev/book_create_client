@@ -1,0 +1,21 @@
+.error_color{
+    color: red;
+}
+.w-50{
+    width: 50%;
+}
+.mr_wid{
+    margin: auto;
+    padding: 7px 19px;
+}
+.align-center{
+    justify-content: center;
+}
+.w-180{
+    width: 180px;
+    margin: auto;
+}
+.pdd_1{
+    padding-top: 1%;
+    padding-bottom: 1%;
+}

@@ -1,0 +1,56 @@
+<section class="padd_5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 font_bld">
+                Book List
+            </div>
+         <div class="col-md-12">
+            <table class="table table-bordered border-primary" >
+                <thead>
+                    <tr>
+                        <td>Title</td>
+                        <td>Author</td>
+                        <td>ISBN</td>
+                        <td>Action</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let data of BookDetails | paginate: { itemsPerPage: limit , currentPage: current_page, totalItems: totalPage }; let index = index">
+                        <td>{{data.title}}</td>
+                        <td>{{data.author}}</td>
+                        <td>{{data.isbn}}</td>
+                        <td>
+                            <div class="dpl_gp"><button class="btn btn-primary" (click)="bookEdit(data.isbn)">Edit</button><button
+                                    class="btn btn-danger" (click)="confirMation(data.isbn)">Delete</button><button class="btn btn-success" (click)="bookReadDescribtion(data.isbn)">Read Book</button></div>
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+         </div>
+         <div class="row">
+            <div class="text-center" *ngIf="isPaginationBth==true">
+              <pagination-controls (pageChange)="getPage(current_page = $event)"></pagination-controls>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="modal" [ngStyle]="{display:display}">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" *ngIf="this.successPopup==false && this.failurePopup==false">Are You Sure
+                        You Want Delete This Book</h5>
+                </div>
+                <div class="modal-body" *ngIf="this.successPopup==true || this.failurePopup==true">
+                    <p>{{message}}</p>
+                </div>
+                <div class="modal-footer" *ngIf="this.successPopup==false 
+            && this.failurePopup==false">
+                    <button type="button" class="btn btn-danger" (click)="closeModal()">Cancel</button>
+                    <button type="button" class="btn btn-success" (click)="deleteBook()">Okay</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

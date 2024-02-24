@@ -1,0 +1,42 @@
+.pos_abs{
+    right: 53%;
+    position: absolute;
+}
+
+.pos_relative{
+    position: relative
+}
+.desc{
+    text-align: justify;
+    padding: 46px;
+}
+.padd_10{
+    padding: 10px 10px;
+}
+.gap{
+    display: flex;
+    gap: 4%;
+}
+.font_800{
+    font-weight: 800;
+}
+.card{
+    border: 1px solid black;
+    border-radius: 18px;
+    box-shadow: 0 0 15px #11001147;
+    width: 50%;
+}
+.container .row{
+    display: flex;
+    justify-content: center;
+    place-items: center;
+    align-items: center;
+}
+.row .description{
+    text-align: center;
+    font-size: 22px;
+    padding-bottom: 3%;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}

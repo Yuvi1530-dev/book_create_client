@@ -1,0 +1,12 @@
+.dpl_gp {
+    display: flex;
+    gap: 3%;
+}
+
+.padd_5 {
+    padding-top: 5%;
+}
+.font_bld{
+    font-size: 28px;
+    font-weight: 700;
+}
